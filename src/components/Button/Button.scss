@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.btn {
+  display: flex;
+  margin: 0.2rem 0;
+  position: relative;
+
+  &--comment {
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+
+  &__style {
+    display: flex;
+    justify-content: center;
+    color: $color-primary-light;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.85rem 0rem;
+    width: 100%;
+    background-color: $color-primary-blue;
+    align-items: center;
+    border-radius: 0.3rem;
+    border: none;
+    transition: all 0.3s ease-out;
+
+    @include tablet {
+      width: 10rem;
+      height: 2.5rem;
+    }
+
+    &:hover {
+      background-color: $color-secondary-darkBlue;
+    }
+  }
+
+  &__img {
+    display: flex;
+    width: 1.3rem;
+    padding-left: 0.5rem;
+    position: absolute;
+    left: 0.2rem;
+  }
+}

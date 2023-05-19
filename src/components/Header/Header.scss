@@ -1,0 +1,31 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      margin: 0.7rem 2.5rem;
+    }
+
+    @include desktop {
+      margin: 0.7rem 8rem;
+    }
+  }
+
+  &__logo {
+    justify-content: center;
+  }
+  &__logo-img {
+    width: 7rem;
+
+    @include tablet {
+      width: 7.5rem;
+    }
+  }
+}

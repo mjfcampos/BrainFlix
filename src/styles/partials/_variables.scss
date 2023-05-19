@@ -1,18 +1,27 @@
 @use "./typography";
+
 // fonts
 $font-primary: AvenirNextTLPro, Verdana, Tahoma, Geneva, sans-serif;
 
 // Colours
 // Primary
+// $primary-white: #ffffff;
 $color-primary-light: #ffffff;
 $color-primary-ascent: #afafaf;
+// $primary-silver: #afafaf;
+$color-primary-blue: #0095ff;
 
 // Secondary
 $color-secondary-light: #fafafa;
+// $secondary-alabaster: #fafafa;
 $color-secondary-ascent: #e1e1e1;
+// $secondary-mercury: #e1e1e1;
+$color-secondary-darkBlue: #0065ad;
 
 $color-dark: #323232;
+// $primary-black: #323232;
 $color-darkblack: #000000;
+// $secondary-darkBlack: #000000;
 
 // screen sizes
 $tablet-width: 768px;
