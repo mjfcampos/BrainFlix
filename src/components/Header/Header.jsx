@@ -1,12 +1,12 @@
 import "./Header.scss";
 
-function Header({ logoImg, searchIcon, avatarImg, Button, uploadIcon }) {
+function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
   return (
     <header className="header">
       <div className="header__wrapper">
         <div className="header__logo">
           <a href="#">
-            <img src={logoImg} alt="logo" className="header__logo-img" />
+            <img src={logoImg} alt="logo" className="header__logo-image" />
           </a>
         </div>
         <div className="searchBox">
@@ -28,13 +28,12 @@ function Header({ logoImg, searchIcon, avatarImg, Button, uploadIcon }) {
               <img src={avatarImg} alt="avatar" className="avatar__img" />
             </div>
           </div>
-          {/* <div className="button">
-             <button className="button__style">
-              <img src={uploadImg} alt="upload" className="button__img" />
+          <div className="button">
+            <button className="button__style">
+              <img src={uploadIcon} alt="upload" className="button__img" />
               Upload
-            </button> 
-          </div>*/}
-          <Button icon={uploadIcon} text={"UPLOAD"} />
+            </button>
+          </div>
         </div>
       </div>
     </header>

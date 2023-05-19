@@ -4,6 +4,7 @@ import ReactTimeAgo from "react-time-ago";
 
 import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 
 // JSON Data
 import videosJSON from "./data/videos.json";
@@ -45,51 +46,13 @@ function App() {
   };
   return (
     <div className="App">
-      <header className="header">
-        <div className="header__wrapper">
-          <div className="header__logo">
-            <a href="#">
-              <img src={logoImg} alt="logo" className="header__logo-image" />
-            </a>
-          </div>
-          <div className="searchBox">
-            <div className="searchBox__avatar-searchBox">
-              <div className="searchBox__container">
-                <input
-                  type="search"
-                  className="searchBox__input"
-                  id="search"
-                  placeholder="Search"
-                />
-                <img
-                  src={searchIcon}
-                  alt="search"
-                  className="searchBox__img-bg"
-                />
-              </div>
-              <div className="avatar">
-                <img src={avatarImg} alt="avatar" className="avatar__img" />
-              </div>
-            </div>
-            <div className="button">
-              <button className="button__style">
-                <img src={uploadIcon} alt="upload" className="button__img" />
-                Upload
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-      <section className="hero">
-        <div className="hero__wrapper">
-          <video
-            controls
-            poster={activeVideoDetail.image}
-            src={activeVideoDetail.video + apiKey}
-            className="hero__video"
-          ></video>
-        </div>
-      </section>
+      <Header
+        logoImg={logoImg}
+        searchIcon={searchIcon}
+        avatarImg={avatarImg}
+        uploadIcon={uploadIcon}
+      />
+      <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
       <main className="main">
         <article className="article">
           <section className="info">
