@@ -1,6 +1,6 @@
 // Components
 import { useState } from "react";
-import SimpleDateTime from "react-simple-timestamp-to-date";
+import ReactTimeAgo from "react-time-ago";
 
 import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
@@ -39,6 +39,10 @@ function App() {
   // Get comments for the active video and store them inside "activeComments"
   const { comments: activeComments } = activeVideoDetail;
 
+  const handleVideoClick = (id) => {
+    const foundVideo = videoDetails.find((video) => video.id === id);
+    setactiveVideo(foundVideo);
+  };
   return (
     <div className="App">
       <header className="header">
@@ -95,13 +99,10 @@ function App() {
                 <div className="info__first-section">
                   <p className="info__author">{activeVideoDetail.channel}</p>
                   <p className="info__text">
-                    <SimpleDateTime
-                      dateFormat="MDY"
-                      dateSeparator="/"
-                      showTime="0"
-                    >
-                      {activeVideoDetail.timestamp / 1000}
-                    </SimpleDateTime>
+                    <ReactTimeAgo
+                      date={activeVideoDetail.timestamp}
+                      locale="en-US"
+                    />
                   </p>
                 </div>
                 <div className="info__second-section">
@@ -174,13 +175,10 @@ function App() {
                       <div className="comment__message-header">
                         <p className="comment__title">{comment.name}</p>
                         <p className="comment__date">
-                          <SimpleDateTime
-                            dateFormat="MDY"
-                            dateSeparator="/"
-                            showTime="0"
-                          >
-                            {comment.timestamp / 1000}
-                          </SimpleDateTime>
+                          <ReactTimeAgo
+                            date={comment.timestamp}
+                            locale="en-US"
+                          />
                         </p>
                       </div>
                       <p className="comment__text">{comment.comment}</p>
@@ -198,7 +196,11 @@ function App() {
               {videos
                 .filter((video) => video.id != activeVideoDetail.id)
                 .map((video) => (
-                  <li key={video.id} className="next-videos__container">
+                  <li
+                    onClick={() => handleVideoClick(video.id)}
+                    key={video.id}
+                    className="next-videos__container"
+                  >
                     <div className="next-videos__video">
                       <img
                         src={video.image}
