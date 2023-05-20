@@ -9,7 +9,7 @@ function CommentList({ activeComments, ReactTimeAgo, avatarImg, Avatar }) {
           key={comment.id}
           className="comment__container comment__container--messages"
         >
-          <Avatar avatarImg={avatarImg} classes="avatar avatar--comments" />
+          <Avatar classes="avatar avatar--comments" />
 
           <div className="comment__message">
             <div className="comment__message-header">

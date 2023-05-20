@@ -38,9 +38,9 @@ function Article({
           <p className="info__description">{activeVideoDetail.description}</p>
         </div>
       </section>
-      <section className="comment">
-        <div className="comment__wrapper">
-          <p className="comment__count">
+      <section className="comments">
+        <div className="comments__wrapper">
+          <p className="comments__count">
             {activeComments.length}{" "}
             {activeComments.length > 1 ? "Comments" : "Comment"}
           </p>
