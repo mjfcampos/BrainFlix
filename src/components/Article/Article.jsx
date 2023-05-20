@@ -1,7 +1,7 @@
 import Avatar from "../Avatar/Avatar";
 import CommentList from "../CommentList/CommentList";
 import CommentForm from "../CommentForm/CommentForm";
-
+import HumanTimeAgo from "../Utils/HumanTimeAgo";
 import "./Article.scss";
 
 function Article({
@@ -9,7 +9,6 @@ function Article({
   viewsIcon,
   likesIcon,
   activeComments,
-  ReactTimeAgo,
   avatarImg,
   addCommentIcon,
 }) {
@@ -22,10 +21,7 @@ function Article({
             <div className="info__first-section">
               <p className="info__author">{activeVideoDetail.channel}</p>
               <p className="info__text">
-                <ReactTimeAgo
-                  date={activeVideoDetail.timestamp}
-                  locale="en-US"
-                />
+                <HumanTimeAgo timestampdate={activeVideoDetail.timestamp} />
               </p>
             </div>
             <div className="info__second-section">
@@ -55,7 +51,6 @@ function Article({
           />
           <CommentList
             activeComments={activeComments}
-            ReactTimeAgo={ReactTimeAgo}
             avatarImg={avatarImg}
             Avatar={Avatar}
           />

@@ -1,3 +1,4 @@
+import HumanTimeAgo from "../Utils/HumanTimeAgo";
 import "./CommentList.scss";
 
 function CommentList({ activeComments, ReactTimeAgo, avatarImg, Avatar }) {
@@ -14,7 +15,7 @@ function CommentList({ activeComments, ReactTimeAgo, avatarImg, Avatar }) {
             <div className="comment__message-header">
               <p className="comment__title">{comment.name}</p>
               <p className="comment__date">
-                <ReactTimeAgo date={comment.timestamp} locale="en-US" />
+                <HumanTimeAgo timestampdate={comment.timestamp} />
               </p>
             </div>
             <p className="comment__text">{comment.comment}</p>

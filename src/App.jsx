@@ -1,6 +1,5 @@
 // Components
 import { useState } from "react";
-import ReactTimeAgo from "react-time-ago";
 
 import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
@@ -63,7 +62,6 @@ function App() {
         addCommentIcon={addCommentIcon}
         handleVideoClick={handleVideoClick}
         videos={videos}
-        ReactTimeAgo={ReactTimeAgo}
       />
     </div>
   );

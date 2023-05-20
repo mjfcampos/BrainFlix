@@ -8,7 +8,7 @@ function Aside({ videos, activeVideoDetail, handleVideoClick }) {
         <h2 className="next-videos__title">Next videos</h2>
         <ul>
           {videos
-            .filter((video) => video.id != activeVideoDetail.id)
+            .filter((video) => video.id !== activeVideoDetail.id)
             .map((video) => (
               <VideoList
                 key={video.id}
