@@ -1,3 +1,7 @@
+import Avatar from "../Avatar/Avatar";
+import CommentList from "../CommentList/CommentList";
+import CommentForm from "../CommentForm/CommentForm";
+
 import "./Article.scss";
 
 function Article({
@@ -44,58 +48,17 @@ function Article({
             {activeComments.length}{" "}
             {activeComments.length > 1 ? "Comments" : "Comment"}
           </p>
-          <form action="" className="comment__form">
-            <div className="avatar avatar--comments">
-              <img src={avatarImg} alt="avatar" className="avatar__img" />
-            </div>
-            <fieldset className="comment__fieldset">
-              <label htmlFor="comment" className="comment__label">
-                Join the Conversation
-              </label>
-              <div className="comment__textarea-container">
-                <textarea
-                  name="comment"
-                  className="comment__textarea"
-                  id="comment"
-                  cols="1"
-                  rows="1"
-                  placeholder="Add a new comment"
-                ></textarea>
-                <div className="button button--comment">
-                  <button className="button__style">
-                    <img
-                      src={addCommentIcon}
-                      alt="upload"
-                      className="button__img"
-                    />
-                    Comment
-                  </button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-
-          <ul className="comment__messages-list">
-            {activeComments.map((comment) => (
-              <li
-                key={comment.id}
-                className="comment__container comment__container--messages"
-              >
-                <div className="avatar avatar--comments">
-                  <img src={avatarImg} alt="avatar" className="avatar__img" />
-                </div>
-                <div className="comment__message">
-                  <div className="comment__message-header">
-                    <p className="comment__title">{comment.name}</p>
-                    <p className="comment__date">
-                      <ReactTimeAgo date={comment.timestamp} locale="en-US" />
-                    </p>
-                  </div>
-                  <p className="comment__text">{comment.comment}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <CommentForm
+            avatarImg={avatarImg}
+            addCommentIcon={addCommentIcon}
+            Avatar={Avatar}
+          />
+          <CommentList
+            activeComments={activeComments}
+            ReactTimeAgo={ReactTimeAgo}
+            avatarImg={avatarImg}
+            Avatar={Avatar}
+          />
         </div>
       </section>
     </article>

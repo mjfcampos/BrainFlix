@@ -1,3 +1,5 @@
+import Button from "../Button/Button";
+import Avatar from "../Avatar/Avatar";
 import "./Header.scss";
 
 function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
@@ -24,16 +26,9 @@ function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
                 className="searchBox__img-bg"
               />
             </div>
-            <div className="avatar">
-              <img src={avatarImg} alt="avatar" className="avatar__img" />
-            </div>
+            <Avatar avatarImg={avatarImg} classes="avatar" />
           </div>
-          <div className="button">
-            <button className="button__style">
-              <img src={uploadIcon} alt="upload" className="button__img" />
-              Upload
-            </button>
-          </div>
+          <Button icon={uploadIcon} text="Upload" />
         </div>
       </div>
     </header>

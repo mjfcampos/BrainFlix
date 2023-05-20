@@ -1,0 +1,28 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.avatar {
+  flex-shrink: 0;
+  padding: 0.25rem 0 0 0;
+
+  &--comments {
+    margin-top: 1.5rem;
+    margin-right: 0.75rem;
+
+    @include tablet {
+      margin-top: 1rem;
+    }
+  }
+
+  &__img {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include tablet {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+}
