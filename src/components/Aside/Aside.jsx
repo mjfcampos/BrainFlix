@@ -6,17 +6,11 @@ function Aside({ videos, activeVideoDetail, handleVideoClick }) {
     <aside className="next-videos">
       <div className="next-videos__wrapper">
         <h2 className="next-videos__title">Next videos</h2>
-        <ul>
-          {videos
-            .filter((video) => video.id !== activeVideoDetail.id)
-            .map((video) => (
-              <VideoList
-                key={video.id}
-                video={video}
-                handleVideoClick={handleVideoClick}
-              />
-            ))}
-        </ul>
+        <VideoList
+          videos={videos}
+          handleVideoClick={handleVideoClick}
+          activeVideoDetail={activeVideoDetail}
+        />
       </div>
     </aside>
   );

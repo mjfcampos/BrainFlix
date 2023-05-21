@@ -28,4 +28,75 @@
       width: 7.5rem;
     }
   }
+  &__searchbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__search {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+
+      @include tablet {
+        order: 2;
+        gap: 2rem;
+      }
+      &-input {
+        display: flex;
+        width: 100%;
+        position: relative;
+        padding: 0.7rem 0;
+
+        @include tablet {
+          position: absolute;
+          width: 15rem;
+          right: 14.8rem;
+          padding: 0;
+        }
+      }
+    }
+
+    &__input {
+      width: 100%;
+      padding: 0.6rem;
+      display: flex;
+      align-items: center;
+      border: 1px solid $color-secondary-ascent;
+      border-radius: 0.25rem;
+      background-color: $color-secondary-light;
+      padding-inline-start: 39px;
+
+      @include tablet {
+        width: 20rem;
+        height: 2.5rem;
+      }
+
+      &::placeholder {
+        font-family: "Avenir";
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: $color-dark;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      left: 0.7rem;
+      top: 1.3rem;
+
+      @include tablet {
+        top: 0.7rem;
+      }
+    }
+  }
 }

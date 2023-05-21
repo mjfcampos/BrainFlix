@@ -8,22 +8,22 @@ function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
       <div className="header__wrapper">
         <div className="header__logo">
           <a href="#">
-            <img src={logoImg} alt="logo" className="header__logo-image" />
+            <img src={logoImg} alt="logo" className="header__logo-img" />
           </a>
         </div>
-        <div className="searchBox">
-          <div className="searchBox__avatar-searchBox">
-            <div className="searchBox__container">
+        <div className="header__searchbox">
+          <div className="header__searchbox__search">
+            <div className="header__searchbox__search-input">
               <input
                 type="search"
-                className="searchBox__input"
+                className="header__searchbox__input"
                 id="search"
                 placeholder="Search"
               />
               <img
                 src={searchIcon}
                 alt="search"
-                className="searchBox__img-bg"
+                className="header__searchbox__img"
               />
             </div>
             <Avatar avatarImg={avatarImg} classes="avatar" />

@@ -1,2 +1,53 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.commentForm {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid $color-secondary-ascent;
+  padding: 1.5rem 0;
+
+  &__fieldset {
+    border: 0px none transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__label {
+    margin: 4px;
+    color: $color-primary-ascent;
+    font-weight: $text-weight-demi;
+    font-size: $tablet-labels-text-size;
+  }
+  &__text {
+    border: 1px solid $color-secondary-ascent;
+    border-radius: 4px;
+    min-height: 2.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: $text-weight-regular;
+    font-size: $tablet-labels-text-size;
+    font-family: $font-primary;
+    resize: none;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    &--textarea {
+      min-height: 12.25rem;
+    }
+    &::placeholder {
+      color: $color-dark;
+      opacity: 1; /* Firefox */
+    }
+    @include tablet {
+      height: 3rem;
+      padding: 1rem;
+    }
+
+    &:focus {
+      outline-color: $color-dark;
+    }
+  }
+}

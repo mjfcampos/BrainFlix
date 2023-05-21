@@ -3,16 +3,16 @@ import "./CommentForm.scss";
 
 function CommentForm({ avatarImg, addCommentIcon, Avatar }) {
   return (
-    <form className="comments__form">
+    <form className="commentForm">
       <Avatar avatarImg={avatarImg} classes="avatar avatar--comments" />
-      <fieldset className="comments__form-fieldset">
-        <label htmlFor="comment" className="comments__form-label">
-          Join the Conversation
+      <fieldset className="commentForm__fieldset">
+        <label htmlFor="comment" className="commentForm__label">
+          JOIN THE CONVERSATION
         </label>
-        <div className="comments__form-text-container">
+        <div className="commentForm__text-container">
           <textarea
             name="comment"
-            className="comments__form-text comments__form-text--textarea"
+            className="commentForm__text commentForm__text--textarea"
             id="comment"
             cols="1"
             rows="1"
