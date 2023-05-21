@@ -1,2 +1,21 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.hero {
+  &__wrapper {
+    width: 100vw;
+    height: 56.6vw;
+    background-color: $color-darkblack;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      height: 52vw;
+    }
+
+    @include desktop {
+      height: 37vw;
+    }
+  }
+}
