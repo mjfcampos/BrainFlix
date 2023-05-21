@@ -1,17 +1,158 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.article {
+  @include desktop {
+    border-right: 1px solid $color-secondary-ascent;
+    width: 80%;
+    padding-top: 2rem;
+  }
+}
+
+.info {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem;
+
+    @include tablet {
+      margin: 1.3rem 2.5rem;
+    }
+
+    @include desktop {
+      margin: 0 0 0 8rem;
+    }
+  }
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-dark;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid $color-secondary-ascent;
+    margin: 0;
+
+    @include tablet {
+      font-size: 2rem;
+      border: none;
+      padding: 0;
+    }
+  }
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-secondary-ascent;
+    padding: 0.9rem 0;
+
+    @include tablet {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__first-section {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__author {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $color-dark;
+    margin: 0 0 0.8rem 0;
+
+    @include tablet {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    font-size: 0.85rem;
+    color: $color-primary-ascent;
+    margin: 0;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__second-section {
+    margin-right: 2rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0;
+      gap: 2rem;
+    }
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+
+  &__views {
+    font-size: 0.85rem;
+    color: $color-primary-ascent;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+
+    @include tablet {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__likes {
+    font-size: 0.85rem;
+    color: $color-primary-ascent;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__description {
+    font-size: 0.85rem;
+    color: $color-dark;
+    margin: 1rem 0;
+
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 1.3rem;
+    }
+    @include desktop {
+      margin-right: 2rem;
+    }
+  }
+}
 .comments {
   background-color: $color-primary-light;
   padding-bottom: 1rem;
-  max-width: $desktop-width;
+  // max-width: $desktop-width;
   margin: 0 auto;
   &__wrapper {
-    max-width: $tablet-width;
+    max-width: $desktop-width;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
+    @include tablet {
+      margin: 1.3rem 2.5rem;
+    }
+
+    @include desktop {
+      margin: 0 0 0 8rem;
+    }
   }
   &__container {
     display: flex;
