@@ -1,2 +1,29 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.videos {
+  &__wrapper {
+    margin: 0 1rem;
+    background-color: white;
+
+    @include tablet {
+      margin: 0 2.5rem;
+    }
+    @include desktop {
+      margin: 2.5rem 8rem 0 0;
+    }
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $color-primary-ascent;
+    text-transform: uppercase;
+    margin: 0.2rem 0 1rem 0;
+
+    @include tablet {
+      font-size: 0.8rem;
+      margin: 0.2rem 0 1.5rem 0;
+    }
+  }
+}

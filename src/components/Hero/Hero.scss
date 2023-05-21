@@ -11,11 +11,11 @@
     justify-content: center;
 
     @include tablet {
-      height: 52vw;
+      height: 50vw;
     }
 
     @include desktop {
-      height: 37vw;
+      height: 40vw;
     }
   }
 }
