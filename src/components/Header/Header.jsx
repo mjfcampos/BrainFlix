@@ -1,8 +1,11 @@
 import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
+import searchIcon from "../../assets/icons/search.svg";
+import uploadIcon from "../../assets/icons/upload.svg";
+import logoImg from "../../assets/logo/BrainFlix-logo.svg";
 import "./Header.scss";
 
-function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
+function Header({ avatarImg }) {
   return (
     <header className="header">
       <div className="header__wrapper">

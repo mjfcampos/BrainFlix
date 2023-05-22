@@ -2,16 +2,11 @@ import Avatar from "../Avatar/Avatar";
 import CommentList from "../CommentList/CommentList";
 import CommentForm from "../CommentForm/CommentForm";
 import HumanTimeAgo from "../Utils/HumanTimeAgo";
+import likesIcon from "../../assets/icons/likes.svg";
+import viewsIcon from "../../assets/icons/views.svg";
 import "./Article.scss";
 
-function Article({
-  activeVideoDetail,
-  viewsIcon,
-  likesIcon,
-  activeComments,
-  avatarImg,
-  addCommentIcon,
-}) {
+function Article({ activeVideoDetail, activeComments, avatarImg }) {
   return (
     <article className="article">
       <section className="info">
@@ -44,11 +39,7 @@ function Article({
             {activeComments.length}{" "}
             {activeComments.length > 1 ? "Comments" : "Comment"}
           </p>
-          <CommentForm
-            avatarImg={avatarImg}
-            addCommentIcon={addCommentIcon}
-            Avatar={Avatar}
-          />
+          <CommentForm avatarImg={avatarImg} Avatar={Avatar} />
           <CommentList
             activeComments={activeComments}
             avatarImg={avatarImg}

@@ -4,11 +4,8 @@ import "./Main.scss";
 
 function Main({
   activeVideoDetail,
-  viewsIcon,
-  likesIcon,
   activeComments,
   avatarImg,
-  addCommentIcon,
   handleVideoClick,
   videos,
   ReactTimeAgo,
@@ -17,12 +14,9 @@ function Main({
     <main className="main">
       <Article
         activeVideoDetail={activeVideoDetail}
-        viewsIcon={viewsIcon}
-        likesIcon={likesIcon}
         activeComments={activeComments}
         ReactTimeAgo={ReactTimeAgo}
         avatarImg={avatarImg}
-        addCommentIcon={addCommentIcon}
       />
       <Aside
         videos={videos}

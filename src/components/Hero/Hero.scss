@@ -4,11 +4,8 @@
 .hero {
   &__wrapper {
     background-color: $color-darkblack;
-    /* 16:9 */
-    /* width is set as 100% here. any width can be specified as per requirement */
     width: 100%;
-    padding-top: 56.25%;
-    height: 0px;
+    aspect-ratio: 16 / 9;
     position: relative;
   }
   &__video {

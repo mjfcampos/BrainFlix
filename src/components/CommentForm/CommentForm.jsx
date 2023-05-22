@@ -1,7 +1,8 @@
 import Button from "../Button/Button";
+import addCommentIcon from "../../assets/icons/add_comment.svg";
 import "./CommentForm.scss";
 
-function CommentForm({ avatarImg, addCommentIcon, Avatar }) {
+function CommentForm({ avatarImg, Avatar }) {
   return (
     <form className="commentForm">
       <Avatar avatarImg={avatarImg} classes="avatar avatar--comments" />
