@@ -7,7 +7,7 @@ function Header({ logoImg, searchIcon, avatarImg, uploadIcon }) {
     <header className="header">
       <div className="header__wrapper">
         <div className="header__logo">
-          <a href="#">
+          <a href="./index.html">
             <img src={logoImg} alt="logo" className="header__logo-img" />
           </a>
         </div>

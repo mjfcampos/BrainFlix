@@ -10,7 +10,7 @@ function CommentList({ activeComments, ReactTimeAgo, avatarImg, Avatar }) {
         })
         .map((comment) => (
           <li key={comment.id} className="comment__list-item">
-            <div class="comment__list-item-container">
+            <div className="comment__list-item-container">
               <Avatar classes="avatar avatar--comments" />
 
               <div className="comment__content">

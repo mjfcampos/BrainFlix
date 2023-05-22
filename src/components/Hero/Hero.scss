@@ -3,19 +3,19 @@
 
 .hero {
   &__wrapper {
-    width: 100vw;
-    height: 56.6vw;
     background-color: $color-darkblack;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-
-    @include tablet {
-      height: 50vw;
-    }
-
-    @include desktop {
-      height: 40vw;
-    }
+    /* 16:9 */
+    /* width is set as 100% here. any width can be specified as per requirement */
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+  }
+  &__video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

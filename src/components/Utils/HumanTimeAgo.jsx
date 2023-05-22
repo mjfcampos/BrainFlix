@@ -2,7 +2,6 @@
 function HumanTimeAgo({ timestampdate }) {
   const currentTimestamp = new Date();
   const oldTimestamp = new Date(timestampdate);
-  console.log(oldTimestamp);
 
   const timestampDiff = currentTimestamp - oldTimestamp;
   const minutes = Math.round(timestampDiff / (1000 * 60));

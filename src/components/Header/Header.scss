@@ -22,11 +22,7 @@
     justify-content: center;
   }
   &__logo-img {
-    width: 7rem;
-
-    @include tablet {
-      width: 7.5rem;
-    }
+    width: 7.5rem;
   }
   &__searchbox {
     width: 100%;
@@ -39,6 +35,10 @@
       gap: 1rem;
       justify-content: flex-end;
       align-items: center;
+    }
+
+    @include desktop {
+      gap: 0;
     }
 
     &__search {
@@ -75,16 +75,14 @@
       border-radius: 0.25rem;
       background-color: $color-secondary-light;
       padding-inline-start: 39px;
+      transition: all 0.3s ease-out;
 
       @include tablet {
-        width: 20rem;
+        width: 15rem;
         height: 2.5rem;
       }
 
       &::placeholder {
-        font-family: "Avenir";
-        font-size: 0.8rem;
-        font-weight: 400;
         color: $color-dark;
       }
     }

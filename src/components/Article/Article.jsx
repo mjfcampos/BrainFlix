@@ -19,7 +19,7 @@ function Article({
           <h1 className="info__header">{activeVideoDetail.title}</h1>
           <div className="info__section">
             <div className="info__first-section">
-              <p className="info__author">{activeVideoDetail.channel}</p>
+              <p className="info__author">By {activeVideoDetail.channel}</p>
               <p className="info__text">
                 <HumanTimeAgo timestampdate={activeVideoDetail.timestamp} />
               </p>

@@ -25,17 +25,14 @@
   }
 
   &__header {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: $text-weight-bold;
     color: $color-dark;
     padding-bottom: 0.9rem;
     border-bottom: 1px solid $color-secondary-ascent;
     margin: 0;
 
     @include tablet {
-      font-size: 2rem;
       border: none;
-      padding: 0;
     }
   }
   &__section {
@@ -59,24 +56,24 @@
   }
 
   &__author {
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: $text-weight-bold;
     color: $color-dark;
     margin: 0 0 0.8rem 0;
 
     @include tablet {
-      font-size: 0.9rem;
+      font-size: $tablet-body-text-size;
+      line-height: $tablet-body-text-line-height;
       margin: 0;
     }
   }
 
   &__text {
-    font-size: 0.85rem;
     color: $color-primary-ascent;
     margin: 0;
 
     @include tablet {
-      font-size: 0.9rem;
+      font-size: $tablet-body-text-size;
+      line-height: $tablet-body-text-line-height;
     }
   }
 
@@ -96,7 +93,6 @@
   }
 
   &__views {
-    font-size: 0.85rem;
     color: $color-primary-ascent;
     display: flex;
     gap: 0.5rem;
@@ -104,30 +100,30 @@
 
     @include tablet {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: $tablet-body-text-size;
+      line-height: $tablet-body-text-line-height;
     }
   }
 
   &__likes {
-    font-size: 0.85rem;
     color: $color-primary-ascent;
     display: flex;
     gap: 0.5rem;
     margin: 0rem;
 
     @include tablet {
-      font-size: 0.9rem;
+      font-size: $tablet-body-text-size;
+      line-height: $tablet-body-text-line-height;
     }
   }
 
   &__description {
-    font-size: 0.85rem;
     color: $color-dark;
     margin: 1rem 0;
 
     @include tablet {
-      line-height: 1.5rem;
-      font-size: 0.9rem;
+      font-size: $tablet-body-text-size;
+      line-height: $tablet-body-text-line-height;
       margin-top: 1.3rem;
     }
     @include desktop {
@@ -137,15 +133,11 @@
 }
 .comments {
   background-color: $color-primary-light;
-  padding-bottom: 1rem;
-  // max-width: $desktop-width;
-  margin: 0 auto;
   &__wrapper {
-    max-width: $desktop-width;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
+    margin: 1rem 1rem;
+
     @include tablet {
       margin: 1.3rem 2.5rem;
     }
@@ -153,6 +145,8 @@
     @include desktop {
       margin: 0 0 0 8rem;
     }
+
+    max-width: $desktop-width;
   }
   &__container {
     display: flex;
@@ -164,9 +158,9 @@
     margin-left: 1rem;
     font-size: $tablet-section-text-size;
     line-height: $tablet-section-text-line-height;
-    font-weight: $text-weight-demi;
+    font-weight: $text-weight-bold;
   }
   &__count {
-    font-weight: $text-weight-demi;
+    font-weight: $text-weight-bold;
   }
 }

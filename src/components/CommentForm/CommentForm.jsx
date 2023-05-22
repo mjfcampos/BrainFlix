@@ -7,7 +7,7 @@ function CommentForm({ avatarImg, addCommentIcon, Avatar }) {
       <Avatar avatarImg={avatarImg} classes="avatar avatar--comments" />
       <fieldset className="commentForm__fieldset">
         <label htmlFor="comment" className="commentForm__label">
-          JOIN THE CONVERSATION
+          Join the Conversation
         </label>
         <div className="commentForm__text-container">
           <textarea

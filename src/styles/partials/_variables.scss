@@ -5,47 +5,54 @@ $font-primary: AvenirNextTLPro, Verdana, Tahoma, Geneva, sans-serif;
 
 // Colours
 // Primary
-// $primary-white: #ffffff;
 $color-primary-light: #ffffff;
-$color-primary-ascent: #afafaf;
-// $primary-silver: #afafaf;
-$color-primary-blue: #0095ff;
+$color-primary-ascent: #afafaf; // Silver
+$color-primary-blue: #0095ff; // BrainFlix-blue
 
 // Secondary
-$color-secondary-light: #fafafa;
-// $secondary-alabaster: #fafafa;
-$color-secondary-ascent: #e1e1e1;
-// $secondary-mercury: #e1e1e1;
-$color-secondary-darkBlue: #0065ad;
+$color-secondary-light: #fafafa; // Alabaster
+$color-secondary-ascent: #e1e1e1; // Mercury
+$color-secondary-darkblue: #0065ad; //BrainFlix-darkblue
 
-$color-dark: #323232;
-// $primary-black: #323232;
-$color-darkblack: #000000;
-// $secondary-darkBlack: #000000;
+$color-dark: #323232; // BrainFlix-Black
+$color-darkblack: #000000; // BrainFlix-DarkBlack
+$color-error: #d22d2d;
 
 // screen sizes
 $tablet-width: 768px;
 $desktop-width: 1280px;
 
-// Desktop and Mobile/Tablet text style
-$tablet-header-text-size: 3.25rem;
-$tablet-header-text-line-height: 4.25rem;
+// Font weights
+$text-weight-regular: 400;
+$text-weight-bold: 700;
+
+// Desktop and Tablet, mobile text style
+$tablet-header-text-size: 2.06rem;
+$tablet-header-text-line-height: 2.75rem;
+$mobile-header-text-size: 1.5rem;
+$mobile-header-text-line-height: 2rem;
 
 $tablet-section-text-size: 2.25rem;
-$tablet-section-text-line-height: 2.75rem;
+$tablet-section-text-line-height: 1.25rem;
+$mobile-section-text-size: 0.75rem;
 
-$tablet-subheader-text-size: 1.75rem;
-$tablet-subheader-text-line-height: 2rem;
+$tablet-subheader-text-size: 0.875rem;
+$tablet-subheader-text-line-height: 1.375rem;
+$mobile-subheader-text-size: 1.083rem;
+$mobile-subheader-text-line-height: 1.125rem;
 
 $tablet-body-text-size: 0.875rem;
 $tablet-body-text-line-height: 1.375rem;
+$mobile-body-text-size: 0.8125rem;
+$mobile-body-text-line-height: 1.125rem;
 
-$tablet-footer-text-size: 0.875rem;
-$tablet-footer-text-line-height: 1.25rem;
-
-$tablet-labels-text-size: 0.875rem;
+$tablet-labels-text-size: 2.25rem;
 $tablet-labels-text-line-height: 1.25rem;
+$mobile-labels-text-size: 0.625rem;
+$mobile-labels-text-line-height: 1.25rem;
 
-$text-weight-regular: 400;
-$text-weight-demi: 600;
-$text-weight-bold: 700;
+// Button
+$button-height: 2.5rem;
+$button-min-width-tablet_desktop: 9.375rem;
+$button-padding-left-right-tablet_desktop: 2rem;
+$button-radius: 0.25rem;
