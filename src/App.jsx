@@ -1,7 +1,6 @@
 // Components
 import { useState } from "react";
 
-// import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Main from "./components/Main/Main";
