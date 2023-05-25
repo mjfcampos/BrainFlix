@@ -1,0 +1,140 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+// TODO: Fix the style for this form
+
+.upload {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $color-secondary-ascent;
+  border-top: 1px solid $color-secondary-ascent;
+  padding: 1.5rem 0;
+  gap: 0.5rem;
+  @include tablet {
+    gap: 1rem;
+  }
+  @include desktop {
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+  }
+  &__title {
+    font-weight: $text-weight-bold;
+  }
+  &__form {
+    display: flex;
+    &__fieldset {
+      border: 0px none transparent;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    &__thumbnail {
+      display: flex;
+      flex-direction: column;
+      color: $color-primary-ascent;
+      font-weight: $text-weight-bold;
+      text-transform: uppercase;
+      &-img {
+        width: 21.875rem;
+        border-radius: 0.25rem;
+        background-color: $color-secondary-ascent;
+      }
+    }
+    &__text {
+      &-container {
+        display: flex;
+        flex-direction: column;
+      }
+      &-title {
+        &-label {
+          display: flex;
+          flex-direction: column;
+          color: $color-primary-ascent;
+          font-weight: $text-weight-bold;
+          text-transform: uppercase;
+        }
+        &-input {
+          border: 1px solid $color-secondary-ascent;
+          background-color: $color-secondary-light;
+          border-radius: 4px;
+          height: 2.25rem;
+          padding: 0.75rem;
+          margin-bottom: 1rem;
+          font-family: $font-primary;
+          min-width: 15rem;
+          max-width: 100%;
+          &::placeholder {
+            color: $color-dark;
+            opacity: 1; /* Firefox */
+          }
+        }
+      }
+      &-description {
+        &-label {
+          display: flex;
+          flex-direction: column;
+          color: $color-primary-ascent;
+          font-weight: $text-weight-bold;
+          text-transform: uppercase;
+        }
+        &-textarea {
+          resize: none;
+          min-height: 12.25rem;
+          transition: all 0.3s ease-out;
+          background-color: $color-secondary-light;
+          border: 1px solid $color-secondary-ascent;
+          @include tablet {
+            min-height: 2.5rem;
+            min-width: 15rem;
+            width: 100%;
+          }
+          &:invalid {
+            border: 1px solid $color-error;
+          }
+          &::placeholder {
+            color: $color-dark;
+            opacity: 1; /* Firefox */
+          }
+        }
+      }
+    }
+    &__btn {
+      &-container {
+        display: flex;
+      }
+      &-cancel {
+        display: flex;
+        margin: 0.2rem 0;
+        position: relative;
+        &__style {
+          display: flex;
+          justify-content: center;
+          text-transform: uppercase;
+          color: $color-primary-blue;
+          font-weight: $text-weight-bold;
+          text-transform: uppercase;
+          padding: 0.85rem 0rem;
+          width: 100%;
+          background-color: transparent;
+          align-items: center;
+          border-radius: $button-radius;
+          border: none;
+          transition: all 0.3s ease-out;
+
+          @include tablet {
+            height: $button-height;
+            width: $button-min-width-tablet_desktop;
+            padding-left: $button-padding-left-right-tablet_desktop;
+            padding-right: $button-padding-left-right-tablet_desktop;
+            font-size: $tablet-body-text-size;
+            line-height: $tablet-body-text-line-height;
+          }
+
+          &:hover {
+            background-color: $color-secondary-darkblue;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Main from "./components/Main/Main";
+import UploadPage from "./pages/UploadPage/UploadPage";
 
 // JSON Data
 import videosJSON from "./data/videos.json";
@@ -32,14 +33,15 @@ function App() {
   return (
     <div className="App">
       <Header avatarImg={avatarImg} />
-      <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
+      {/* <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
       <Main
         activeVideoDetail={activeVideoDetail}
         activeComments={activeComments}
         avatarImg={avatarImg}
         handleVideoClick={handleVideoClick}
         videos={videos}
-      />
+      /> */}
+      <UploadPage />
     </div>
   );
 }
