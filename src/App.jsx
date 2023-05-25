@@ -33,15 +33,15 @@ function App() {
   return (
     <div className="App">
       <Header avatarImg={avatarImg} />
-      {/* <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
+      <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
       <Main
         activeVideoDetail={activeVideoDetail}
         activeComments={activeComments}
         avatarImg={avatarImg}
         handleVideoClick={handleVideoClick}
         videos={videos}
-      /> */}
-      <UploadPage />
+      />
+      {/* <UploadPage /> */}
     </div>
   );
 }
