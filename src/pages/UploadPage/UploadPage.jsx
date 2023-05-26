@@ -1,9 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import "./UploadPage.scss";
 import uploadVideoPreview from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/icons/publish.svg";
 
 function UploadPage() {
+  const navigate = useNavigate();
+  const handleClick = (event) => {
+    event.preventDefault();
+    alert("File uploaded sucessfully");
+    navigate("/");
+  };
   return (
     <div className="upload">
       <h1 className="upload__title">Upload Video</h1>
@@ -37,14 +44,18 @@ function UploadPage() {
                 placeholder="Add a description to your video"
               ></textarea>
             </label>
-            <div className="upload__form__btn-container">
-              <div className="upload__form__btn-cancel">
-                <button className="upload__form__btn-cancel__style">
-                  Cancel
-                </button>
-              </div>
-              <Button icon={publish} text="Publish" />
-            </div>
+            <Button
+              text="Cancel"
+              type="submit"
+              handleClick={handleClick}
+              addClassName={"btn__style--cancel"}
+            />
+            <Button
+              icon={publish}
+              text="Publish"
+              type="submit"
+              handleClick={handleClick}
+            />
           </div>
         </fieldset>
       </form>

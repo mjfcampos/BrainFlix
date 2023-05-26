@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
 import searchIcon from "../../assets/icons/search.svg";
@@ -7,6 +7,13 @@ import logoImg from "../../assets/logo/BrainFlix-logo.svg";
 import "./Header.scss";
 
 function Header({ avatarImg }) {
+  const navigate = useNavigate();
+  const handleClick = (event) => {
+    event.preventDefault();
+    // console.log(event);
+    navigate("/upload");
+    // buttonClickFunction();
+  };
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -32,12 +39,7 @@ function Header({ avatarImg }) {
             </div>
             <Avatar avatarImg={avatarImg} classes="avatar" />
           </div>
-          <Button
-            icon={uploadIcon}
-            text="Upload"
-            destRoute="/upload"
-            type="submit"
-          />
+          <Button icon={uploadIcon} text="Upload" handleClick={handleClick} />
         </div>
       </div>
     </header>

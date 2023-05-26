@@ -1,24 +1,27 @@
-import { useNavigate } from "react-router-dom";
 import "./Button.scss";
 
-function Button({ icon, text, destRoute, type, buttonClickFunction }) {
-  const navigate = useNavigate();
-  const handleClick = (event) => {
-    event.preventDefault();
-    console.log(event);
-    navigate(destRoute);
-    buttonClickFunction();
-  };
-  // console.log("destRoute: ", destRoute);
-
+function Button({ icon, text, type, addClassName, handleClick }) {
+  if (icon) {
+    return (
+      <div className="btn">
+        <button
+          onClick={handleClick ? handleClick : null}
+          type={type ? type : null}
+          className={addClassName ? `btn__style ${addClassName}` : "btn__style"}
+        >
+          <img src={icon} alt={text} className="btn__img" />
+          {text}
+        </button>
+      </div>
+    );
+  }
   return (
-    <div className="btn btn--comment">
+    <div className="btn">
       <button
-        onClick={destRoute ? buttonClickFunction : null}
-        type={type}
-        className="btn__style"
+        onClick={handleClick ? handleClick : null}
+        type={type ? type : null}
+        className={addClassName ? `btn__style ${addClassName}` : "btn__style"}
       >
-        <img src={icon} alt={text} className="btn__img" />
         {text}
       </button>
     </div>
