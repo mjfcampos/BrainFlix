@@ -1,15 +1,11 @@
 // Components
-
-import { useState } from "react";
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import Main from "./components/Main/Main";
-import UploadPage from "./pages/UploadPage/UploadPage";
 
-// JSON Data
-import videosJSON from "./data/videos.json";
-import videoDetailsJSON from "./data/video-details.json";
+// Pages
+import VideoPage from "./pages/VideoPage/VideoPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 // Images
 import avatarImg from "./assets/images/Mohan-muruge.jpg";
@@ -18,30 +14,21 @@ import avatarImg from "./assets/images/Mohan-muruge.jpg";
 import "./styles/global.scss";
 
 function App() {
-  const apiKey = "?api_key=marcelo";
-  const [videos] = useState(videosJSON);
-  const [videoDetails] = useState(videoDetailsJSON);
-  const [activeVideoDetail, setActiveVideoDetail] = useState(videoDetails[0]);
-
-  // Get comments for the active video and store them inside "activeComments"
-  const { comments: activeComments } = activeVideoDetail;
-
-  const handleVideoClick = (id) => {
-    const foundVideo = videoDetails.find((video) => video.id === id);
-    setActiveVideoDetail(foundVideo);
-  };
   return (
     <div className="App">
-      <Header avatarImg={avatarImg} />
-      <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
-      <Main
-        activeVideoDetail={activeVideoDetail}
-        activeComments={activeComments}
-        avatarImg={avatarImg}
-        handleVideoClick={handleVideoClick}
-        videos={videos}
-      />
-      {/* <UploadPage /> */}
+      <BrowserRouter>
+        <Header avatarImg={avatarImg} />
+        <Routes>
+          <Route path="/" element={<VideoPage avatarImg={avatarImg} />} />
+          <Route path="/video" element={<Navigate to="/" />} />
+          <Route
+            path="/video/:videoId"
+            element={<VideoPage avatarImg={avatarImg} />}
+          />
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

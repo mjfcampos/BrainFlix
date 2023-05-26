@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
 import searchIcon from "../../assets/icons/search.svg";
@@ -10,9 +11,9 @@ function Header({ avatarImg }) {
     <header className="header">
       <div className="header__wrapper">
         <div className="header__logo">
-          <a href="./index.html">
+          <Link to="/video">
             <img src={logoImg} alt="logo" className="header__logo-img" />
-          </a>
+          </Link>
         </div>
         <div className="header__searchbox">
           <div className="header__searchbox__search">
@@ -31,7 +32,12 @@ function Header({ avatarImg }) {
             </div>
             <Avatar avatarImg={avatarImg} classes="avatar" />
           </div>
-          <Button icon={uploadIcon} text="Upload" />
+          <Button
+            icon={uploadIcon}
+            text="Upload"
+            destRoute="/upload"
+            type="submit"
+          />
         </div>
       </div>
     </header>
