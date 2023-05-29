@@ -1,10 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./VideoList.scss";
 
-function VideoList({ videos, handleVideoClick, activeVideoDetail }) {
+function VideoList({ videosList, activeVideo }) {
+  const navigate = useNavigate();
+
+  const handleVideoClick = (id) => {
+    navigate(`/video/${id}`);
+  };
+
   return (
     <ul className="video__list">
-      {videos
-        .filter((video) => video.id !== activeVideoDetail.id)
+      {videosList
+        .filter((video) => video.id !== activeVideo.id)
         .map((video) => (
           <li
             onClick={() => handleVideoClick(video.id)}

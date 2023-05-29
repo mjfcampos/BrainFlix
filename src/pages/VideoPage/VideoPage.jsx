@@ -1,36 +1,68 @@
-import { useState } from "react";
-import "./VideoPage.scss";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Hero from "../../components/Hero/Hero";
 import Main from "../../components/Main/Main";
-
-// JSON Data
-import videosJSON from "../../data/videos.json";
-import videoDetailsJSON from "../../data/video-details.json";
+import "./VideoPage.scss";
 
 function VideoPage({ avatarImg }) {
-  const apiKey = "?api_key=marcelo";
-  const [videos] = useState(videosJSON);
-  const [videoDetails] = useState(videoDetailsJSON);
-  const [activeVideoDetail, setActiveVideoDetail] = useState(videoDetails[0]);
+  const apiKey = "0040d29c-3835-4c59-81b7-7ce4e654ded5";
+  const apiVideosURL = "https://project-2-api.herokuapp.com/videos";
 
-  // Get comments for the active video and store them inside "activeComments"
-  const { comments: activeComments } = activeVideoDetail;
+  const params = useParams();
+  const navigate = useNavigate();
 
-  const handleVideoClick = (id) => {
-    const foundVideo = videoDetails.find((video) => video.id === id);
-    setActiveVideoDetail(foundVideo);
-  };
+  const [videosList, setVideosList] = useState([]);
+  const [activeVideo, setActiveVideo] = useState({});
+
+  // Fetch video list
+  useEffect(() => {
+    axios
+      .get(`${apiVideosURL}?api_key=${apiKey}`)
+      .then((response) => {
+        setVideosList(response.data);
+        navigate(`/video/${response.data[0].id}`);
+      })
+      .catch((error) => {
+        console.error("Error feching data from API:", error);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Fetch video by id
+  useEffect(() => {
+    if (params.videoId) {
+      axios
+        .get(`${apiVideosURL}/${params.videoId}?api_key=${apiKey}`)
+        .then((response) => {
+          setActiveVideo(response.data);
+        })
+        .catch((error) => {
+          console.error("Error feching data from API:", error);
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.videoId]);
+
+  // if (activeVideo.id && videosList.length > 0) {
+  //   // console.log("If activeVideo: ", activeVideo);
+  //   console.log("VideoPage===> videosList:", videosList, activeVideo.id);
+  // }
+
   return (
-    <div>
-      <Hero activeVideoDetail={activeVideoDetail} apiKey={apiKey} />
-      <Main
-        activeVideoDetail={activeVideoDetail}
-        activeComments={activeComments}
-        avatarImg={avatarImg}
-        handleVideoClick={handleVideoClick}
-        videos={videos}
-      />
-    </div>
+    <>
+      {activeVideo.id && videosList.length > 0 ? (
+        <div>
+          <Hero activeVideo={activeVideo} apiKey={apiKey} />
+          <Main
+            activeVideo={activeVideo}
+            activeComments={activeVideo.comments}
+            avatarImg={avatarImg}
+            videosList={videosList}
+          />
+        </div>
+      ) : null}
+    </>
   );
 }
 

@@ -1,16 +1,12 @@
 import VideoList from "../VideoList/VideoList";
 import "./Aside.scss";
 
-function Aside({ videos, activeVideoDetail, handleVideoClick }) {
+function Aside({ videosList, activeVideo }) {
   return (
     <aside className="videos">
       <div className="videos__wrapper">
         <h2 className="videos__title">Next videos</h2>
-        <VideoList
-          videos={videos}
-          handleVideoClick={handleVideoClick}
-          activeVideoDetail={activeVideoDetail}
-        />
+        <VideoList videosList={videosList} activeVideo={activeVideo} />
       </div>
     </aside>
   );

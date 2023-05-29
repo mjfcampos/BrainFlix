@@ -8,7 +8,9 @@ function UploadPage() {
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
-    alert("File uploaded sucessfully");
+    if (event.target.innerText.toLowerCase() === "publish") {
+      alert("File uploaded sucessfully");
+    }
     navigate("/");
   };
   return (

@@ -6,31 +6,31 @@ import likesIcon from "../../assets/icons/likes.svg";
 import viewsIcon from "../../assets/icons/views.svg";
 import "./Article.scss";
 
-function Article({ activeVideoDetail, activeComments, avatarImg }) {
+function Article({ activeVideo, activeComments, avatarImg }) {
   return (
     <article className="article">
       <section className="info">
         <div className="info__wrapper">
-          <h1 className="info__header">{activeVideoDetail.title}</h1>
+          <h1 className="info__header">{activeVideo.title}</h1>
           <div className="info__section">
             <div className="info__first-section">
-              <p className="info__author">By {activeVideoDetail.channel}</p>
+              <p className="info__author">By {activeVideo.channel}</p>
               <p className="info__text">
-                <HumanTimeAgo timestampdate={activeVideoDetail.timestamp} />
+                <HumanTimeAgo timestampdate={activeVideo.timestamp} />
               </p>
             </div>
             <div className="info__second-section">
               <div className="info__views">
                 <img src={viewsIcon} alt="viewsImg" />
-                <p className="info__text">{activeVideoDetail.views}</p>
+                <p className="info__text">{activeVideo.views}</p>
               </div>
               <div className="info__likes">
                 <img src={likesIcon} alt="likesImg" />
-                <p className="info__text">{activeVideoDetail.likes}</p>
+                <p className="info__text">{activeVideo.likes}</p>
               </div>
             </div>
           </div>
-          <p className="info__description">{activeVideoDetail.description}</p>
+          <p className="info__description">{activeVideo.description}</p>
         </div>
       </section>
       <section className="comments">

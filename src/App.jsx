@@ -20,6 +20,7 @@ function App() {
         <Header avatarImg={avatarImg} />
         <Routes>
           <Route path="/" element={<VideoPage avatarImg={avatarImg} />} />
+          <Route path="/home" element={<Navigate to="/" />} />
           <Route path="/video" element={<Navigate to="/" />} />
           <Route
             path="/video/:videoId"

@@ -3,26 +3,21 @@ import Aside from "../Aside/Aside";
 import "./Main.scss";
 
 function Main({
-  activeVideoDetail,
+  activeVideo,
   activeComments,
   avatarImg,
-  handleVideoClick,
-  videos,
+  videosList,
   ReactTimeAgo,
 }) {
   return (
     <main className="main">
       <Article
-        activeVideoDetail={activeVideoDetail}
+        activeVideo={activeVideo}
         activeComments={activeComments}
         ReactTimeAgo={ReactTimeAgo}
         avatarImg={avatarImg}
       />
-      <Aside
-        videos={videos}
-        activeVideoDetail={activeVideoDetail}
-        handleVideoClick={handleVideoClick}
-      />
+      <Aside videosList={videosList} activeVideo={activeVideo} />
     </main>
   );
 }
