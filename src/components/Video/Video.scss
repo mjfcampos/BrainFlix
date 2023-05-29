@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video {
+  &__img {
+    width: 6.2rem;
+    height: 3.85rem;
+    border-radius: 0.25rem;
+    background-color: $color-secondary-ascent;
+
+    @include tablet {
+      width: 7.5rem;
+      height: 4.5rem;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.1rem 0 0.1rem 1rem;
+    &-title {
+      margin: 0;
+      color: $color-dark;
+      font-weight: $text-weight-bold;
+
+      @include tablet {
+        font-size: $tablet-body-text-size;
+      }
+    }
+    &-author {
+      margin: 0;
+      color: $color-dark;
+
+      @include tablet {
+        font-size: $tablet-body-text-size;
+      }
+    }
+  }
+}

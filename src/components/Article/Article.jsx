@@ -6,7 +6,7 @@ import likesIcon from "../../assets/icons/likes.svg";
 import viewsIcon from "../../assets/icons/views.svg";
 import "./Article.scss";
 
-function Article({ activeVideo, activeComments, avatarImg }) {
+function Article({ activeVideo, avatarImg }) {
   return (
     <article className="article">
       <section className="info">
@@ -36,12 +36,12 @@ function Article({ activeVideo, activeComments, avatarImg }) {
       <section className="comments">
         <div className="comments__wrapper">
           <p className="comments__count">
-            {activeComments.length}{" "}
-            {activeComments.length > 1 ? "Comments" : "Comment"}
+            {activeVideo.comments.length}{" "}
+            {activeVideo.comments.length > 1 ? "Comments" : "Comment"}
           </p>
           <CommentForm avatarImg={avatarImg} Avatar={Avatar} />
           <CommentList
-            activeComments={activeComments}
+            activeComments={activeVideo.comments}
             avatarImg={avatarImg}
             Avatar={Avatar}
           />

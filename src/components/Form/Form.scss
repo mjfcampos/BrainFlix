@@ -1,0 +1,132 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+    @include tablet {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+    }
+  }
+  &__fieldset {
+    border: 0px none transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include tablet {
+      border-top: 1px solid $color-secondary-ascent;
+      border-bottom: 1px solid $color-secondary-ascent;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+  &__thumbnail {
+    display: flex;
+    padding: 1rem 0;
+    flex-direction: column;
+    color: $color-primary-ascent;
+    font-weight: $text-weight-bold;
+    text-transform: uppercase;
+    &-img-container {
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+      width: 25.875rem;
+      height: 14.18rem;
+      border-radius: 0.25rem;
+      background-color: $color-secondary-ascent;
+    }
+    &-img {
+      border-radius: 0.25rem;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      @include desktop {
+        flex-grow: 1;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+    }
+    &-title {
+      &-label {
+        display: flex;
+        flex-direction: column;
+        color: $color-primary-ascent;
+        font-weight: $text-weight-bold;
+        text-transform: uppercase;
+      }
+      &-input {
+        border: 1px solid $color-secondary-ascent;
+        background-color: $color-secondary-light;
+        border-radius: 4px;
+        height: 2.25rem;
+        padding: 0.75rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
+        font-family: $font-primary;
+        min-width: 15rem;
+        max-width: 100%;
+        &::placeholder {
+          color: $color-dark;
+          opacity: 1; /* Firefox */
+        }
+      }
+    }
+    &-description {
+      &-label {
+        display: flex;
+        flex-direction: column;
+        color: $color-primary-ascent;
+        font-weight: $text-weight-bold;
+        text-transform: uppercase;
+      }
+      &-textarea {
+        resize: none;
+        min-height: 12.25rem;
+        transition: all 0.3s ease-out;
+        background-color: $color-secondary-light;
+        border: 1px solid $color-secondary-ascent;
+        border-radius: 4px;
+        margin-top: 0.25rem;
+        padding: 0.75rem;
+        @include tablet {
+          min-height: 2.5rem;
+          min-width: 15rem;
+          width: 100%;
+        }
+        @include desktop {
+          min-height: 8.5rem;
+        }
+        &:invalid {
+          border: 1px solid $color-error;
+        }
+        &::placeholder {
+          color: $color-dark;
+          opacity: 1; /* Firefox */
+        }
+      }
+    }
+  }
+}

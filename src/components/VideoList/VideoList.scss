@@ -1,52 +1,40 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.video {
+.videos {
+  &__wrapper {
+    margin: 0 1rem;
+    background-color: $color-primary-light;
+  }
+
+  &__title {
+    font-size: $mobile-body-text-size;
+    font-weight: $text-weight-bold;
+    color: $color-primary-ascent;
+    text-transform: uppercase;
+    margin: 1.5rem 0rem;
+
+    @include tablet {
+      font-size: $tablet-body-text-size;
+    }
+  }
   &__list {
     &__item {
       display: flex;
       padding-bottom: 1rem;
-
+      cursor: pointer;
+      transition: transform 0.3s;
+      &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+        transform: scale(1.02);
+      }
       @include tablet {
         width: 45%;
       }
 
       @include desktop {
         width: 100%;
-      }
-      &-video {
-        width: 6.2rem;
-        height: 3.85rem;
-        border-radius: 0.25rem;
-        background-color: $color-secondary-ascent;
-
-        @include tablet {
-          width: 7.5rem;
-          height: 4.5rem;
-        }
-      }
-      &-description {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 0.1rem 0 0.1rem 1rem;
-        &-title {
-          margin: 0;
-          color: $color-dark;
-          font-weight: $text-weight-bold;
-
-          @include tablet {
-            font-size: $tablet-body-text-size;
-          }
-        }
-        &-author {
-          margin: 0;
-          color: $color-dark;
-
-          @include tablet {
-            font-size: $tablet-body-text-size;
-          }
-        }
       }
     }
   }

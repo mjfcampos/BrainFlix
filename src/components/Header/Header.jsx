@@ -10,9 +10,7 @@ function Header({ avatarImg }) {
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
-    // console.log(event);
     navigate("/upload");
-    // buttonClickFunction();
   };
   return (
     <header className="header">

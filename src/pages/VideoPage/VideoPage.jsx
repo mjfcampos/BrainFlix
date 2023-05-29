@@ -44,11 +44,6 @@ function VideoPage({ avatarImg }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.videoId]);
 
-  // if (activeVideo.id && videosList.length > 0) {
-  //   // console.log("If activeVideo: ", activeVideo);
-  //   console.log("VideoPage===> videosList:", videosList, activeVideo.id);
-  // }
-
   return (
     <>
       {activeVideo.id && videosList.length > 0 ? (
@@ -56,7 +51,6 @@ function VideoPage({ avatarImg }) {
           <Hero activeVideo={activeVideo} apiKey={apiKey} />
           <Main
             activeVideo={activeVideo}
-            activeComments={activeVideo.comments}
             avatarImg={avatarImg}
             videosList={videosList}
           />

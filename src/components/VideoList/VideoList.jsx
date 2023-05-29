@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Video from "../Video/Video";
 import "./VideoList.scss";
 
 function VideoList({ videosList, activeVideo }) {
@@ -9,33 +10,24 @@ function VideoList({ videosList, activeVideo }) {
   };
 
   return (
-    <ul className="video__list">
-      {videosList
-        .filter((video) => video.id !== activeVideo.id)
-        .map((video) => (
-          <li
-            onClick={() => handleVideoClick(video.id)}
-            key={video.id}
-            className="video__list__item"
-          >
-            <div className="video__list__item-video">
-              <img
-                src={video.image}
-                alt=""
-                className="video__list__item-video"
-              />
-            </div>
-            <div className="video__list__item-description">
-              <p className="video__list__item-description-title">
-                {video.title}
-              </p>
-              <p className="video__list__item-description-author">
-                {video.channel}
-              </p>
-            </div>
-          </li>
-        ))}
-    </ul>
+    <section className="videos">
+      <div className="videos__wrapper">
+        <h2 className="videos__title">Next videos</h2>
+        <ul className="videos__list">
+          {videosList
+            .filter((video) => video.id !== activeVideo.id)
+            .map((video) => (
+              <li
+                onClick={() => handleVideoClick(video.id)}
+                key={video.id}
+                className="videos__list__item"
+              >
+                <Video video={video} />
+              </li>
+            ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 
