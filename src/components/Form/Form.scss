@@ -46,7 +46,6 @@
     &-img-container {
       margin-top: 0.25rem;
       flex-shrink: 0;
-      max-width: 55.5rem;
       border-radius: 0.25rem;
       background-color: $color-secondary-ascent;
       @include tablet {
@@ -61,6 +60,7 @@
       height: 100%;
       overflow: hidden;
       object-fit: cover;
+      display: block;
     }
   }
   &__text {
