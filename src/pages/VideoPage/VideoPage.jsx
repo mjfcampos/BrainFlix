@@ -7,11 +7,9 @@ import "./VideoPage.scss";
 
 function VideoPage({ avatarImg }) {
   // load .env variable for the server URL, Create React App uses .env variables that start with REACT_APP_
-  const API_URL = process.env.REACT_APP_API_SERVER;
-
   const apiKey = "0040d29c-3835-4c59-81b7-7ce4e654ded5";
   // const apiVideosURL = "https://project-2-api.herokuapp.com/videos";
-  const apiVideosURL = API_URL + "/videos";
+  const apiVideosURL = process.env.REACT_APP_API_SERVER;
 
   const params = useParams();
   const navigate = useNavigate();

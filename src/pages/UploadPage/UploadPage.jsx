@@ -7,6 +7,9 @@ function UploadPage() {
   const handleClick = (event) => {
     event.preventDefault();
     if (event.target.innerText.toLowerCase() === "publish") {
+      console.log(event.target.name.value);
+      console.log(event.target.name.description);
+      console.dir(event.target);
       alert("File uploaded sucessfully");
     }
     navigate("/");

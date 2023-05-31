@@ -33,6 +33,9 @@
       cursor: pointer;
       background-color: $color-secondary-darkblue;
     }
+    &:disabled {
+      background-color: $color-secondary-ascent;
+    }
     &--cancel {
       color: $color-primary-blue;
       background-color: transparent;

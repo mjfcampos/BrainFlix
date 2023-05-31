@@ -1,12 +1,70 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import Button from "../Button/Button";
 import uploadVideoPreview from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/icons/publish.svg";
 import "./Form.scss";
 
 function Form({ handleClick, formType }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const navigate = useNavigate();
+  const apiVideosURL = process.env.REACT_APP_API_SERVER;
+
+  const postNewVideo = (newVideo) => {
+    axios
+      .post(`${apiVideosURL}`, {
+        title: newVideo.title,
+        description: newVideo.description,
+        image: newVideo.image,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   if (formType === "UploadVideo") {
+    // Create a handler for title input
+    const handleChangeTitle = (event) => {
+      setTitle(event.target.value);
+    };
+    // Create a handler for description textarea
+    const handleChangeDescription = (event) => {
+      setDescription(event.target.value);
+    };
+
+    // Check if the form is valid
+    const isFormValid = () => {
+      if (!title || !description) {
+        return false;
+      }
+      return true;
+    };
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(event.target.title.value);
+      console.log(event.target.description.value);
+
+      if (isFormValid()) {
+        postNewVideo({
+          title: event.target.title.value,
+          description: event.target.description.value,
+          image: "image8.jpg",
+        });
+        alert("New video submitted successfully.");
+        navigate("/");
+      } else {
+        alert("Failed to submit, you have some errors in your form");
+      }
+    };
     return (
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <fieldset className="form__fieldset">
           <label className="form__thumbnail">
             Video Thumbnail
@@ -26,6 +84,8 @@ function Form({ handleClick, formType }) {
                 type="text"
                 name="title"
                 placeholder="Add a title to your video"
+                onChange={handleChangeTitle}
+                value={title}
               />
             </label>
             <label className="form__text-description-label">
@@ -34,6 +94,8 @@ function Form({ handleClick, formType }) {
                 name="description"
                 className="form__text-description-textarea"
                 placeholder="Add a description to your video"
+                onChange={handleChangeDescription}
+                value={description}
               ></textarea>
             </label>
           </div>
@@ -43,7 +105,7 @@ function Form({ handleClick, formType }) {
             icon={publish}
             text="Publish"
             type="submit"
-            handleClick={handleClick}
+            disabled={!isFormValid()}
           />
           <Button
             text="Cancel"

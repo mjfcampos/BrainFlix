@@ -1,10 +1,11 @@
 import "./Button.scss";
 
-function Button({ icon, text, type, addClassName, handleClick }) {
+function Button({ icon, text, type, addClassName, handleClick, disabled }) {
   if (icon) {
     return (
       <div className="btn">
         <button
+          disabled={disabled}
           onClick={handleClick ? handleClick : null}
           type={type ? type : null}
           className={addClassName ? `btn__style ${addClassName}` : "btn__style"}
@@ -18,6 +19,7 @@ function Button({ icon, text, type, addClassName, handleClick }) {
   return (
     <div className="btn">
       <button
+        disabled={disabled}
         onClick={handleClick ? handleClick : null}
         type={type ? type : null}
         className={addClassName ? `btn__style ${addClassName}` : "btn__style"}
