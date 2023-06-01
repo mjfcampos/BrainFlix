@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Form from "../../components/Form/Form";
+import Form from "../../components/UploadForm/UploadForm";
 import "./UploadPage.scss";
 
 function UploadPage() {
