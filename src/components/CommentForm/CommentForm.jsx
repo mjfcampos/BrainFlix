@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// TODO: Axios will be used to post data: comments
+// import axios from "axios";
 
 import Button from "../Button/Button";
 import addCommentIcon from "../../assets/icons/add_comment.svg";
@@ -11,7 +12,9 @@ function CommentForm({ avatarImg, Avatar }) {
   const [comment, setComment] = useState("");
 
   const navigate = useNavigate();
-  const apiVideosURL = process.env.REACT_APP_API_SERVER;
+
+  // TODO: The veriable bellow will be used in axios
+  // const apiVideosURL = process.env.REACT_APP_API_SERVER;
 
   // TODO: Form and API. the function bellow is not done, it is not working
   const postNewComment = (newComment) => {
@@ -49,7 +52,7 @@ function CommentForm({ avatarImg, Avatar }) {
       postNewComment({
         comment: event.target.title.comment,
       });
-      alert("Comment submitted successfully.");
+      alert("Functionality not implemented.");
       navigate("/");
     } else {
       alert("Failed to submit, you have some errors in your form");
