@@ -109,6 +109,7 @@
       &-textarea {
         resize: none;
         min-height: 12.25rem;
+        max-height: 12.25rem;
         transition: all 0.3s ease-out;
         background-color: $color-secondary-light;
         border: 1px solid $color-secondary-ascent;
@@ -122,6 +123,7 @@
         }
         @include desktop {
           min-height: 11rem;
+          max-height: 11rem;
         }
         &:invalid {
           border: 1px solid $color-error;

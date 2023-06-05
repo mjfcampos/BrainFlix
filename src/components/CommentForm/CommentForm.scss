@@ -37,6 +37,10 @@
     min-width: 15rem;
     max-width: 100%;
     resize: none;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
     &-container {
       display: flex;
       flex-direction: column;
@@ -48,6 +52,7 @@
     }
     &--textarea {
       min-height: 12.25rem;
+      max-height: 12.25rem;
       transition: all 0.3s ease-out;
       background-color: $color-secondary-light;
       @include tablet {

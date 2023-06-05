@@ -5,9 +5,10 @@ import axios from "axios";
 import Button from "../Button/Button";
 import uploadVideoPreview from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/icons/publish.svg";
+import resizeTextarea from "../../utils/resizetextarea";
 import "./UploadForm.scss";
 
-function Form({ handleClick, formType }) {
+function UploadForm({ handleClick, formType }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
@@ -47,8 +48,6 @@ function Form({ handleClick, formType }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.title.value);
-    console.log(event.target.description.value);
 
     if (isFormValid()) {
       postNewVideo({
@@ -98,6 +97,7 @@ function Form({ handleClick, formType }) {
             placeholder="Add a description to your video"
             onChange={handleChangeDescription}
             value={description}
+            onInput={() => resizeTextarea("description")}
           ></textarea>
         </div>
       </fieldset>
@@ -119,4 +119,4 @@ function Form({ handleClick, formType }) {
   );
 }
 
-export default Form;
+export default UploadForm;
